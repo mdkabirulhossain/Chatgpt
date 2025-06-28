@@ -8,8 +8,16 @@ import saved from './assets/bookmark.svg'
 import upgrade from './assets/rocket.svg'
 import gptlogo from './assets/chatgptLogo.svg'
 import send from './assets/send.svg'
+import { sendMsgToOpenAI } from './openAI'
 
 function App() {
+
+  const [input, setInput] = useState("");
+
+  const handleSend = async() =>{
+    const res = await sendMsgToOpenAI(input);
+    console.log(res);
+  }
 
   return (
     <div className='min-h-screen flex'>
@@ -44,8 +52,11 @@ function App() {
 
         </div>
         <div className='chatFooter mt-auto w-full flex items-center justify-center p-4 rounded-md bg-[#1c1e3a]'>
-          <input className='w-full outline-none ' type="text" placeholder='Send a message' />
-          <button><img src={send} alt="" /></button>
+          <input className='w-full outline-none ' type="text" placeholder='Send a message'
+          value={input} onChange={(e) => setInput(e.target.value)}
+
+          />
+          <button className='cursor-pointer' onClick={handleSend}><img src={send} alt="" /></button>
         </div>
       </div>
     </div>
