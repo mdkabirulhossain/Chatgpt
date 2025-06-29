@@ -50,25 +50,25 @@ function App() {
 
   return (
     <div className='min-h-screen flex'>
-      <div className="sidebar w-96 flex flex-col  gap-0 border-r border-r-red-50">
-        <div className="uperSide p-10 h-2/3 ">
-          <div className='flex gap-1 items-center mb-10'>
+      <div className="sidebar w-16 md:w-96 flex flex-col  gap-0 border-r border-r-red-50">
+        <div className="uperSide p-2 md:p-10 h-2/3 ">
+          <div className='flex gap-1 items-center mb-5 mt-2 md:mt-0 md:mb-10'>
             <img src={logo} alt="" />
-            <span className='text-3xl'>ChatGPT</span>
+            <span className='text-3xl hidden md:block'>ChatGPT</span>
           </div>
-          <button onClick={()=>{window.location.reload()}} className='flex gap-1 p-3 cursor-pointer items-center justify-center w-full mx-auto rounded-md bg-[#5A4BFF] mb-12'><img src={addimg} className='w-7 h-7' alt="" /><span className='text-xl'>New Chat</span></button>
-          <div className='flex flex-col gap-2'>
-            <button className='flex gap-4 items-center cursor-pointer p-6 rounded-md border border-[rgba(98,98,98,1)]' value={"What is Programming ?"} onClick={handleQuery}><img src={msgicon} alt="" /> What is Programming ?</button>
-            <button className='flex gap-4 items-center cursor-pointer p-6 rounded-md border border-[rgba(98,98,98,1)]' value={"How to use an API ?"} onClick={handleQuery}><img src={msgicon} alt="" /> How to use an API ?</button>
+          <button onClick={()=>{window.location.reload()}} className='flex gap-1 p-3 cursor-pointer items-center justify-center w-full mx-auto rounded-full md:rounded-md bg-[#5A4BFF] mb-12'><img src={addimg} className='w-7 h-7' alt="" /><span className='text-xl hidden md:block'>New Chat</span></button>
+          <div className='hidden md:flex flex-col gap-2'>
+            <button className='flex gap-4 items-center cursor-pointer p-6 rounded-md border border-[rgba(98,98,98,1)]' value={"What is Machine Learning?"} onClick={handleQuery}><img src={msgicon} alt="" /> What is Machine Learning?</button>
+            <button className='flex gap-4 items-center cursor-pointer p-6 rounded-md border border-[rgba(98,98,98,1)]' value={"How to use an API ?"} onClick={handleQuery}><img src={msgicon} alt="" /> How to use DeepSeek API ?</button>
           </div>
         </div>
-        <div className="lowerSide p-10 border-t border-t-red-50">
-          <div className='flex gap-4 items-center m-3 py-1'><img src={home} className='min-w-5' alt="" />Home</div>
-          <div className='flex gap-4 items-center m-3 py-1'><img src={saved} className='min-w-5' alt="" />Saved</div>
-          <div className='flex gap-4 items-center m-3 py-1'><img src={upgrade} className='min-w-5' alt="" />Upgrade to Pro</div>
+        <div className="lowerSide p-2 md:p-10 border-t border-t-red-50 mt-auto">
+          <div className='flex gap-4 items-center m-3 py-1'><img src={home} className='min-w-5' alt="" /><span className='hidden md:block'>Home</span></div>
+          <div className='flex gap-4 items-center m-3 py-1'><img src={saved} className='min-w-5' alt="" /><span className='hidden md:block'>Saved</span></div>
+          <div className='flex gap-4 items-center m-3 py-1'><img src={upgrade} className='min-w-5' alt="" /><span className='hidden md:block'>Upgrade to Pro</span></div>
         </div>
       </div>
-      <div className="main flex-1 flex flex-col mx-20 my-10">
+      <div className="main flex-1 flex flex-col mx-8 my-4 md:mx-20 Md:my-10">
          <h3 className='mx-auto text-2xl'>Where should we begin?</h3>
         <div className='chats overflow-y-auto scroll-smooth w-full h-[calc(100vh_-_12rem)]'>
           
